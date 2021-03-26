@@ -12,6 +12,7 @@ exports.typeDefs = gql`
             purchasedOn: String
             perishes: Boolean
         }
+        
     type Query {
         app_name: String
         fruits: [Fruit]

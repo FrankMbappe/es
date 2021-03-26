@@ -1,7 +1,7 @@
 const { Fruit } = require("../models/Fruit");
 
 // Confs
-const APP_VERSION = "2.0"
+const APP_VERSION = "2.0";
 
 
 // Resolvers
