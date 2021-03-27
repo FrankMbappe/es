@@ -12,7 +12,7 @@ exports.typeDefs = gql`
             purchasedOn: String
             perishes: Boolean
         }
-        
+
     type Query {
         app_name: String
         fruits: [Fruit]
@@ -20,6 +20,8 @@ exports.typeDefs = gql`
         delivery(id: ID!): Delivery
         users: [User]
         user(id: ID!): User
+        login(phone: String!): Boolean # SMS authentication
+        verify(phone: String!, code: String!): Boolean  # SMS verification
     }
         type Delivery {
             id: ID
