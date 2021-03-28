@@ -20,9 +20,18 @@ exports.typeDefs = gql`
         delivery(id: ID!): Delivery
         users: [User]
         user(id: ID!): User
-        login(phone: String!): Boolean # SMS authentication
-        verify(phone: String!, code: String!): Boolean  # SMS verification
-    }
+        login(phone: String!): TwilioResponse # SMS authentication
+        verify(phone: String!, code: String!): TwilioResponse  # SMS verification
+    }        
+        type TwilioResponse {
+            isApproved: Boolean
+            attempts: Int
+            to: String!
+            status: String
+            createdOn: String
+            updatedOn: String
+        }
+
         type Delivery {
             id: ID
             record_date: String
